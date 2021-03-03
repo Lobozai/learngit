@@ -44,7 +44,7 @@ gzip -1 file
 
 表2.1 Hadoop的压缩codec
 
-![Hadoop的压缩codec.jpg](.\Hadoop的压缩codec.jpg)
+![Hadoop的压缩codec.jpg](./Hadoop的压缩codec.jpg)
 LZO代码库拥有GPL许可，因而可能没有包含在Apache的发行版本中，因此，Hadoop的codec需要从Google(http://code.google.com/p/hadoop-gpl-compression)
 或GitHub(http://github.com/kevinwei/hadoop-lzo)
 下载，该代码库包含有修正的软件错误及其他一些工具。LzopCoder与lzop工具兼容，LzopCodec基本上是LZO格式的但包含额外的文件头，因此这通常就是你想要的。也有针对纯LZO格式的LzoCodec，并且使用.lzo_deflate作为文件扩展名（类似于DEFLATE，是gzip格式但不包含文件头）
@@ -137,13 +137,13 @@ Hadoop自带的org.apache.hadoop.io包中有广泛的Writable类可供选择。�
 
 图3.1 Writable类的层次结构
 
-![Writable类的层次结构.jpg](.\Writable类的层次结构.jpg)
+![Writable类的层次结构.jpg](./Writable类的层次结构.jpg)
 
 ####3.2.1 Java基本类型的Writable封装器
 Writable类对所有Java基本类型（参见表3.1）提供封装，char类型除外（可以存储在IntWritable中）。所有的封装包含get()和set()两个方法用于读取或存储封装的值。
 
 表3.1 Java基本类型的Wriable表
-![Java基本类型的Writable.jpg](.\Java基本类型的Writable.jpg)
+![Java基本类型的Writable.jpg](./Java基本类型的Writable.jpg)
 对整数进行编码时，有两种选择，既定长格式(IntWritable和LongWritable)和变长格式(VIntWritable和VLongWritable)。
 
 ###3.2.2 Text类型
@@ -230,7 +230,7 @@ public class SequenceFileWriteDemo {
 ```
 运行的部分结果如下图所示：
 
-![SequenceFileWriteDemo运行结果.jpg](.\SequenceFileWriteDemo运行结果.jpg)
+![SequenceFileWriteDemo运行结果.jpg](./SequenceFileWriteDemo运行结果.jpg)
 
 ####3.4.2 SequenceFile的读操作
 从头到尾读取顺序文件不外乎创建SequenceFile.Reader实例后反复调用next()方法迭代读取记录。读取的是哪条记录与你使用的序列化框架相关。如果使用的是Writable类型，那么通过键和值作为参数的next()方法可以将数据流中的下一条键-值对读入变量中。
@@ -277,7 +277,7 @@ public class SequenceFileReadDemo {
 
 部分运行结果如下图所示：
 
-![SequenceFileReadDemo运行结果.jpg](.\SequenceFileReadDemo运行结果.jpg)
+![SequenceFileReadDemo运行结果.jpg](./SequenceFileReadDemo运行结果.jpg)
 在顺序文件中搜索给定位置有两种方法。第一种是调用seek()方法，该方法将指针指向文件中指定的位置。例如，可以按如下方式搜索记录边界：
 ```java
 reader.seek(359);
